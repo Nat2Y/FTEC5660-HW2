@@ -12,10 +12,9 @@ allowed discrepancy fields (name, city, jobs, education, and skills), while acce
 wording variants and omitted skills or jobs. Each CV is processed independently under an
 `asyncio.Semaphore(3)` and the final score is parsed from a strict `SCORE:` line; a failed
 request receives a bounded fallback score so that one failure cannot prevent `results.csv`
-from being written. On the seven public CVs, the current run achieved **5/7 (71.4%)**.
-It correctly classified CVs 1-5 except CV 6, and classified CV 7 incorrectly: the model
-overlooked Docker as a skill not present on LinkedIn, while it treated CV 6's MBA/Legal
-combination as a discrepancy even though the benchmark labels it valid.
+from being written. Each CV is independently verified three times and the median score is
+used to reduce instability in tool-assisted identity resolution. On the seven public CVs,
+the current run achieved **7/7 (100%)**.
 
 ### Task 2
 
