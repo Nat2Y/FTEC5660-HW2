@@ -38,11 +38,14 @@ Procedure:
 1. Extract the candidate's name, city/country, industry or role, jobs, education, and skills
    from the CV.
 2. Search LinkedIn using the name plus location and, when useful, industry/title. If there are
-   multiple matches, compare the returned headline, industry, location, and years of experience
-   with the CV, then retrieve profiles for the plausible matches. Search Facebook using the
-   CV name and location as a cross-check; display names can differ from legal names.
-3. Select the person whose identity and profile evidence best match the CV. Never assume that a
-   name alone identifies a person.
+   multiple matches, retrieve the full profile for every plausible match before selecting one.
+   Compare the complete structured CV pattern (company/title/date pairs, education school and
+   degree, and skills) against each profile; an exact multi-field match is stronger evidence
+   than a generic headline or years-of-experience value. Search Facebook using the CV name and
+   location as a cross-check; display names can differ from legal names.
+3. Select the person whose complete profile best matches the CV. Never assume that a name alone
+   identifies a person. Do not select a same-name profile merely because its headline or city
+   matches when another candidate matches the CV's jobs and education exactly.
 4. Retrieve the selected full LinkedIn profile and compare every claimed field:
    name, city, jobs (company, title/seniority, start/end years), education (degree, school,
    field, graduation year), and skills. A single false claim is enough for a low score.
